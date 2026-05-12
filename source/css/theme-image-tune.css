@@ -1,0 +1,40 @@
+.header-inner .banner {
+  background-position: center 22%;
+}
+
+#board {
+  background: rgba(255, 250, 252, 0.78) !important;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 48px rgba(186, 155, 182, 0.16);
+}
+
+.navbar.scrolling-navbar {
+  backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(122, 166, 216, 0.16);
+}
+
+.index-card,
+.post-content,
+.widget,
+.pagination .page-number,
+.pagination .extend,
+.note {
+  border-radius: 18px;
+}
+
+.index-card,
+.widget,
+.post-content {
+  border: 1px solid rgba(236, 182, 201, 0.24);
+  box-shadow: 0 14px 36px rgba(163, 175, 220, 0.08);
+}
+
+.banner-text .h2,
+.banner-text #subtitle {
+  text-shadow: 0 6px 24px rgba(101, 91, 123, 0.28);
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand {
+  text-shadow: 0 2px 10px rgba(88, 95, 122, 0.2);
+}
