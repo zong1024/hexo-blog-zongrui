@@ -1,1 +1,61 @@
-/* Theme defaults restored. */
+@font-face {
+  font-family: "ZongTech UI";
+  src: url("/fonts/SmileySans-Oblique.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range:
+    U+2E80-2EFF,
+    U+2F00-2FDF,
+    U+3040-30FF,
+    U+3100-312F,
+    U+3190-319F,
+    U+31A0-31BF,
+    U+31C0-31EF,
+    U+3200-32FF,
+    U+3400-4DBF,
+    U+4E00-9FFF,
+    U+F900-FAFF,
+    U+FF00-FFEF;
+}
+
+@font-face {
+  font-family: "ZongTech UI";
+  src: url("/fonts/Formula1-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  unicode-range:
+    U+0000-00FF,
+    U+0100-024F,
+    U+1E00-1EFF,
+    U+2000-206F,
+    U+20A0-20CF,
+    U+2100-214F;
+}
+
+:root {
+  --zongtech-font-ui: "ZongTech UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+.navbar,
+.banner-text,
+.post-content,
+.index-info,
+.footer-content,
+.modal,
+.toc-container {
+  font-family: var(--zongtech-font-ui);
+}
+
+code,
+pre,
+kbd,
+samp {
+  font-family: "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+}
