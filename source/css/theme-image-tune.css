@@ -8,11 +8,6 @@
   box-shadow: 0 20px 50px rgba(116, 124, 156, 0.14);
 }
 
-.index-page #board {
-  padding-top: 2.25rem;
-  padding-bottom: 1.5rem;
-}
-
 #navbar {
   background: rgba(107, 119, 146, 0.42) !important;
   backdrop-filter: blur(16px);
@@ -20,7 +15,6 @@
 }
 
 .index-card,
-.post-content,
 .widget,
 .pagination .page-number,
 .pagination .extend,
@@ -30,10 +24,41 @@
 
 .index-card,
 .widget,
-.post-content {
+.note {
   background: rgba(255, 251, 253, 0.72);
   border: 1px solid rgba(223, 194, 207, 0.42);
   box-shadow: 0 14px 34px rgba(120, 132, 170, 0.1);
+}
+
+.index-page #board {
+  background: transparent !important;
+  box-shadow: none;
+  backdrop-filter: none;
+  padding-top: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.index-page .index-card {
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+}
+
+.index-page .index-info {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.post-content,
+.page-content {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.post-content > .markdown-body,
+.page-content > .markdown-body {
+  padding-top: 0.85rem;
 }
 
 .header-inner .mask {
