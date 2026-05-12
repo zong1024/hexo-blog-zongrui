@@ -30,7 +30,7 @@
   box-shadow: 0 12px 28px rgba(112, 120, 141, 0.08);
 }
 
-.index-page #board {
+#board[style="margin-top: 0"] {
   background: rgba(239, 242, 246, 0.94) !important;
   box-shadow: 0 16px 38px rgba(103, 112, 132, 0.1);
   backdrop-filter: blur(12px);
@@ -38,16 +38,30 @@
   padding-bottom: 0.75rem;
 }
 
-.index-page .index-card {
+#board[style="margin-top: 0"] .index-card {
   margin-bottom: 0;
   padding: 0;
-  background: transparent;
-  border: 0;
-  box-shadow: none;
+  border-radius: 0;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-.index-page .index-info {
-  padding: 0.35rem 0.25rem 0;
+#board[style="margin-top: 0"] .index-info {
+  padding: 0.15rem 0 0;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#board[style="margin-top: 0"] .index-excerpt,
+#board[style="margin-top: 0"] .index-excerpt > div,
+#board[style="margin-top: 0"] .index-btm {
+  background: transparent !important;
+}
+
+#board[style="margin-top: 0"] .index-header {
+  margin-bottom: 0.35rem;
 }
 
 .post-content,
