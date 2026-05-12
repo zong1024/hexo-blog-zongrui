@@ -140,14 +140,14 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#e2e6ea"
+  body_bg_color: "#d9e0e6"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
   body_bg_color_dark: "#181c27"
 
   # 顶部菜单背景色
   # Color of navigation bar background
-  navbar_bg_color: "#2f4154"
+  navbar_bg_color: "#6c7f9e"
   navbar_bg_color_dark: "#1f3144"
 
   # 顶部菜单字体色
@@ -172,32 +172,32 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color: "#f5f7fa"
+  board_color: "#e9eef3"
   board_color_dark: "#252d38"
 
   # 文章正文字体色
   # Color of post text
-  post_text_color: "#2c3e50"
+  post_text_color: "#4b596d"
   post_text_color_dark: "#c4c6c9"
 
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
-  post_heading_color: "#1a202c"
+  post_heading_color: "#3f4d64"
   post_heading_color_dark: "#c4c6c9"
 
   # 文章超链接字体色
   # Color of post link
-  post_link_color: "#7ca6d8"
+  post_link_color: "#7595c7"
   post_link_color_dark: "#a8c8f0"
 
   # 超链接悬浮时字体色
   # Color of link when hovering
-  link_hover_color: "#eb9cb5"
+  link_hover_color: "#d98aa4"
   link_hover_color_dark: "#f5b4ca"
 
   # 超链接悬浮背景色
   # Color of link background when hovering
-  link_hover_bg_color: "#fff1f7"
+  link_hover_bg_color: "#f3e6ee"
   link_hover_bg_color_dark: "#4a5167"
 
   # 分隔线和表格边线的颜色
@@ -220,7 +220,7 @@ color:
   button_bg_color_dark: "transparent"
   # 按钮悬浮背景色
   # Color of button when hovering
-  button_hover_bg_color: "#ffe7f0"
+  button_hover_bg_color: "#f1dde6"
   button_hover_bg_color_dark: "#6e7fa7"
 
 # 主题字体配置

@@ -1,1 +1,53 @@
-/* Theme defaults restored. */
+.header-inner .banner {
+  background-position: center 28%;
+}
+
+#navbar {
+  background: rgba(108, 127, 158, 0.44) !important;
+  box-shadow: 0 10px 24px rgba(92, 108, 138, 0.14);
+  backdrop-filter: blur(12px);
+}
+
+#board,
+.widget,
+.note,
+.pagination .page-number,
+.pagination .extend,
+.modal-content,
+.markdown-body table tr:nth-child(2n) {
+  background: rgba(233, 238, 243, 0.96) !important;
+}
+
+#board {
+  box-shadow: 0 14px 34px rgba(100, 112, 133, 0.12) !important;
+}
+
+.widget,
+.note,
+.modal-content {
+  border: 1px solid rgba(191, 201, 214, 0.7);
+  box-shadow: 0 10px 24px rgba(104, 115, 136, 0.08);
+}
+
+.pagination .page-number,
+.pagination .extend {
+  border-color: rgba(191, 201, 214, 0.7) !important;
+}
+
+.index-card {
+  box-shadow: none !important;
+}
+
+.header-inner .mask {
+  background-color: rgba(88, 99, 124, 0.26) !important;
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover,
+.index-header a:hover,
+.post-content a:hover,
+.page-content a:hover,
+.about-content a:hover,
+.markdown-body a:hover {
+  color: #d98aa4 !important;
+}
