@@ -140,15 +140,15 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#dde3e8"
+  body_bg_color: "#eee"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
-  body_bg_color_dark: "#272c3c"
+  body_bg_color_dark: "#181c27"
 
   # 顶部菜单背景色
   # Color of navigation bar background
-  navbar_bg_color: "#6f7c96"
-  navbar_bg_color_dark: "#495469"
+  navbar_bg_color: "#2f4154"
+  navbar_bg_color_dark: "#1f3144"
 
   # 顶部菜单字体色
   # Color of navigation bar text
@@ -172,18 +172,18 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color: "rgba(240, 243, 247, 0.94)"
-  board_color_dark: "rgba(41, 46, 61, 0.92)"
+  board_color: "#fff"
+  board_color_dark: "#252d38"
 
   # 文章正文字体色
   # Color of post text
-  post_text_color: "#51586a"
-  post_text_color_dark: "#e7deea"
+  post_text_color: "#2c3e50"
+  post_text_color_dark: "#c4c6c9"
 
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
-  post_heading_color: "#4e5566"
-  post_heading_color_dark: "#f3e6ee"
+  post_heading_color: "#1a202c"
+  post_heading_color_dark: "#c4c6c9"
 
   # 文章超链接字体色
   # Color of post link
@@ -512,7 +512,7 @@ index:
   # 头图黑色蒙版的不透明度，available: 0 - 1.0，1 是完全不透明
   # Opacity of the banner mask, 1.0 is completely opaque
   # Available: 0 - 1.0
-  banner_mask_alpha: 0.34
+  banner_mask_alpha: 0.3
 
   # 首页副标题的独立设置
   # Independent config of home page subtitle
@@ -576,7 +576,7 @@ index:
 post:
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 70
-  banner_mask_alpha: 0.34
+  banner_mask_alpha: 0.3
 
   # 文章在首页的默认封面图，当没有指定 index_img 时会使用该图片，若两者都为空则不显示任何图片
   # Path of the default post cover when `index_img` is not set. If both are empty, no image will be displayed
@@ -948,7 +948,7 @@ discuss:
 archive:
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 60
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
 
 
 #---------------------------
@@ -959,7 +959,7 @@ category:
   enable: true
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 60
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
 
   # 分类的排序字段，前面带减号是倒序，不带减号是正序
   # Sort field for categories, with a minus sign is reverse order
@@ -988,7 +988,7 @@ tag:
   enable: true
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 80
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
   tagcloud:
     min_font: 15
     max_font: 30
@@ -1005,10 +1005,10 @@ about:
   enable: true
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 60
-  banner_mask_alpha: 0.36
-  avatar: /img/avatar-zongruichd.jpg
-  name: "ZONGRUICHD"
-  intro: "记录项目、想法和折腾"
+  banner_mask_alpha: 0.3
+  avatar: /img/avatar.png
+  name: "Fluid"
+  intro: "An elegant theme for Hexo"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
   # More icons can be found from https://hexo.fluid-dev.com/docs/en/icon/  `class` is the css class of the icon. If adding `qrcode`, the icon is no longer a link, but a hovering QR code
   icons:
@@ -1027,7 +1027,7 @@ about:
 page:
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 60
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
 
 
 #---------------------------
@@ -1038,7 +1038,7 @@ page404:
   enable: true
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 85
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
   # 重定向到首页的延迟(毫秒)
   # Delay in redirecting to home page (milliseconds)
   redirect_delay: 5000
@@ -1052,7 +1052,7 @@ links:
   enable: true
   banner_img: /img/theme-cat-umbrella-close.jpg
   banner_img_height: 60
-  banner_mask_alpha: 0.36
+  banner_mask_alpha: 0.3
   # 友链的成员项
   # Member item of page
   items:
@@ -1077,7 +1077,7 @@ links:
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
-  onerror_avatar: /img/avatar-zongruichd.jpg
+  onerror_avatar: /img/avatar.png
 
   # 友链下方自定义区域，支持 HTML，可插入例如申请友链的文字
   # Custom content at the bottom of the links
