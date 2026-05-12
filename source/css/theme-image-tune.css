@@ -3,9 +3,9 @@
 }
 
 #board {
-  background: rgba(248, 244, 248, 0.9) !important;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 20px 50px rgba(116, 124, 156, 0.14);
+  background: rgba(240, 243, 247, 0.94) !important;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 42px rgba(103, 112, 132, 0.12);
 }
 
 #navbar {
@@ -25,27 +25,29 @@
 .index-card,
 .widget,
 .note {
-  background: rgba(255, 251, 253, 0.72);
-  border: 1px solid rgba(223, 194, 207, 0.42);
-  box-shadow: 0 14px 34px rgba(120, 132, 170, 0.1);
+  background: rgba(245, 247, 250, 0.8);
+  border: 1px solid rgba(203, 209, 220, 0.55);
+  box-shadow: 0 12px 28px rgba(112, 120, 141, 0.08);
 }
 
 .index-page #board {
-  background: transparent !important;
-  box-shadow: none;
-  backdrop-filter: none;
-  padding-top: 1.25rem;
-  padding-bottom: 0.25rem;
+  background: rgba(239, 242, 246, 0.94) !important;
+  box-shadow: 0 16px 38px rgba(103, 112, 132, 0.1);
+  backdrop-filter: blur(12px);
+  padding-top: 1.5rem;
+  padding-bottom: 0.75rem;
 }
 
 .index-page .index-card {
-  margin-bottom: 1rem;
-  padding: 0.85rem 1rem;
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .index-page .index-info {
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0.35rem 0.25rem 0;
 }
 
 .post-content,
@@ -82,7 +84,7 @@
 }
 
 footer {
-  background: linear-gradient(180deg, rgba(232, 236, 242, 0.96) 0%, rgba(224, 229, 237, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(225, 230, 236, 0.96) 0%, rgba(218, 223, 230, 0.98) 100%);
   color: #6b7088;
 }
 

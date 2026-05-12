@@ -140,7 +140,7 @@ dark_mode:
 color:
   # body 背景色
   # Color of body background
-  body_bg_color: "#e8edf2"
+  body_bg_color: "#dde3e8"
   # 暗色模式下的 body 背景色，下同
   # Color in dark mode, the same below
   body_bg_color_dark: "#272c3c"
@@ -172,17 +172,17 @@ color:
 
   # 主面板背景色
   # Color of main board
-  board_color: "rgba(250, 246, 249, 0.92)"
+  board_color: "rgba(240, 243, 247, 0.94)"
   board_color_dark: "rgba(41, 46, 61, 0.92)"
 
   # 文章正文字体色
   # Color of post text
-  post_text_color: "#56556c"
+  post_text_color: "#51586a"
   post_text_color_dark: "#e7deea"
 
   # 文章正文字体色（h1 h2 h3...）
   # Color of Article heading (h1 h2 h3...)
-  post_heading_color: "#63586f"
+  post_heading_color: "#4e5566"
   post_heading_color_dark: "#f3e6ee"
 
   # 文章超链接字体色
