@@ -13,7 +13,7 @@ categories:
   - 教程
 ---
 
-本文是一篇给新手看的配置教程，主要讲如何在 **OpenCode**、**Claude Code**、**Codex** 这三类 AI 编程工具中，配合 **CC Switch** 管理配置，并统一接入自己的 **SUB2API 中转站 URL 和 API Key**。
+本文是一篇给新手看的配置教程，主要讲如何在 **OpenCode**、**Claude Code**、**Codex** 这三类 AI 编程工具中，配合 **CC Switch** 管理配置，并统一接入我的 **SUB2API 中转站 URL 和密钥**。
 
 先把关系说清楚：
 
@@ -21,11 +21,33 @@ categories:
 >
 > **CC Switch 不是中转站，它只是用来切换 Provider、模型和配置的工具。**
 
-也就是说，真正接收 API 请求的是 SUB2API；CC Switch 只是帮助你更方便地在不同工具、不同模型、不同 Provider 之间切换。
+也就是说，真正接收请求的是 SUB2API；CC Switch 只是帮助你更方便地在不同工具、不同模型、不同 Provider 之间切换。
 
 <!-- more -->
 
-## 一、整体关系
+## 一、我的 SUB2API 信息
+
+SUB2API 官网地址：
+
+```text
+https://20260513.xyz
+```
+
+OpenAI-compatible API 地址：
+
+```text
+https://20260513.xyz/v1
+```
+
+密钥填写位置示例：
+
+```text
+<YOUR_SUB2API_KEY>
+```
+
+如果你拿到我提供的赠送密钥，把它完整复制到客户端的密钥输入框即可。
+
+## 二、整体关系
 
 整个调用链可以简单理解成：
 
@@ -34,66 +56,28 @@ OpenCode / Claude Code / Codex
         ↓
 通过 CC Switch 选择或切换配置
         ↓
-请求你的 SUB2API Base URL
+请求你的 SUB2API OpenAI URL
         ↓
 SUB2API 转发到上游模型服务
 ```
 
-所以你真正需要准备的是三样东西：
+所以真正需要填写的是三样东西：
 
 ```text
-SUB2API Base URL
-SUB2API API Key
+SUB2API OpenAI URL
+SUB2API 密钥
 SUB2API 后台支持的模型名
 ```
 
-示例格式：
+本文对应配置为：
 
 ```text
-Base URL: https://你的-sub2api-domain.com/v1
-API Key:  sk-你的-api-key
+Base URL: https://20260513.xyz/v1
+Key:      <YOUR_SUB2API_KEY>
 Model:    SUB2API 后台支持的模型名
 ```
 
-如果你的 SUB2API 已经配置好了 OpenAI-compatible 接口，通常 Base URL 需要带 `/v1`。
-
-## 二、本文使用的示例 API Key
-
-这里提供一个赠送 API Key 的脱敏展示，读者拿到完整 Key 后按同样格式填入即可：
-
-```text
-sk-fc4898...03e18
-```
-
-> 不建议把完整 API Key 写进公开博客或公开仓库。公开后任何人都能直接消耗额度。
-
-后文为了方便阅读，会用下面这个占位符表示：
-
-```text
-YOUR_SUB2API_KEY
-```
-
-实际配置时，把 `YOUR_SUB2API_KEY` 替换成你的 SUB2API Key。
-
-## 三、准备工作
-
-在开始之前，你需要准备：
-
-1. 一个可用的 SUB2API 中转站地址；
-2. 一个可用的 SUB2API API Key；
-3. 已安装 OpenCode、Claude Code 或 Codex；
-4. 已安装并配置好 CC Switch；
-5. 知道 SUB2API 后台支持哪些模型名。
-
-本文假设你的 SUB2API 地址是：
-
-```text
-https://你的-sub2api-domain.com/v1
-```
-
-如果你的地址不是这个，把教程里的地址替换成你自己的即可。
-
-## 四、配置 CC Switch
+## 三、配置 CC Switch
 
 CC Switch 的作用不是转发请求，而是帮你管理和切换不同配置。
 
@@ -108,8 +92,8 @@ SUB2API
 ```json
 {
   "name": "SUB2API",
-  "base_url": "https://你的-sub2api-domain.com/v1",
-  "api_key": "YOUR_SUB2API_KEY",
+  "base_url": "https://20260513.xyz/v1",
+  "api_key": "<YOUR_SUB2API_KEY>",
   "models": [
     "gpt-5.1-codex",
     "claude-sonnet-4-5",
@@ -120,8 +104,8 @@ SUB2API
 
 这里需要注意：
 
-- `base_url` 填 SUB2API 的地址；
-- `api_key` 填 SUB2API 的 API Key；
+- `base_url` 填 SUB2API 的 OpenAI URL，也就是 `https://20260513.xyz/v1`；
+- `api_key` 填 SUB2API 的密钥；
 - `models` 填 SUB2API 后台实际支持的模型名；
 - CC Switch 只是切换配置，不是中转站。
 
@@ -137,7 +121,7 @@ OpenCode → CC Switch → SUB2API
 OpenCode → 使用 CC Switch 选中的配置 → SUB2API
 ```
 
-## 五、OpenCode 接入 SUB2API
+## 四、OpenCode 接入 SUB2API
 
 OpenCode 如果支持 OpenAI-compatible Provider，就可以直接接入 SUB2API。
 
@@ -145,16 +129,16 @@ OpenCode 如果支持 OpenAI-compatible Provider，就可以直接接入 SUB2API
 
 ```text
 Provider: OpenAI Compatible
-Base URL: https://你的-sub2api-domain.com/v1
-API Key:  YOUR_SUB2API_KEY
+Base URL: https://20260513.xyz/v1
+Key:      <YOUR_SUB2API_KEY>
 Model:    SUB2API 后台支持的模型名
 ```
 
 如果 OpenCode 支持环境变量，也可以这样配置：
 
 ```bash
-export OPENAI_BASE_URL="https://你的-sub2api-domain.com/v1"
-export OPENAI_API_KEY="YOUR_SUB2API_KEY"
+export OPENAI_BASE_URL="https://20260513.xyz/v1"
+export OPENAI_API_KEY="<YOUR_SUB2API_KEY>"
 ```
 
 然后启动 OpenCode：
@@ -165,23 +149,23 @@ opencode
 
 如果能正常返回模型回答，说明 OpenCode 已经通过 SUB2API 连通。
 
-## 六、Claude Code 接入 SUB2API
+## 五、Claude Code 接入 SUB2API
 
-Claude Code 本身偏向 Anthropic 体系，所以这里要看你的 SUB2API 是否提供 Claude 兼容接口，或者是否把 Claude 模型转换成 OpenAI-compatible 格式。
+Claude Code 本身偏向 Anthropic 体系，所以这里要看 SUB2API 是否提供 Claude 兼容接口，或者是否把 Claude 模型转换成 OpenAI-compatible 格式。
 
 如果你的 SUB2API 提供 OpenAI-compatible 接口，配置思路仍然是：
 
 ```text
-Base URL: https://你的-sub2api-domain.com/v1
-API Key:  YOUR_SUB2API_KEY
+Base URL: https://20260513.xyz/v1
+Key:      <YOUR_SUB2API_KEY>
 Model:    SUB2API 后台支持的 Claude 模型名
 ```
 
-如果使用环境变量，常见写法可能类似：
+如果使用 Anthropic 兼容环境变量，常见写法可能类似：
 
 ```bash
-export ANTHROPIC_BASE_URL="https://你的-sub2api-domain.com"
-export ANTHROPIC_AUTH_TOKEN="YOUR_SUB2API_KEY"
+export ANTHROPIC_BASE_URL="https://20260513.xyz"
+export ANTHROPIC_AUTH_TOKEN="<YOUR_SUB2API_KEY>"
 ```
 
 实际变量名以你当前 Claude Code 和 SUB2API 的兼容方式为准。
@@ -194,7 +178,7 @@ Claude Code 最终请求的是 SUB2API
 CC Switch 只是负责切换配置
 ```
 
-## 七、Codex 接入 SUB2API
+## 六、Codex 接入 SUB2API
 
 Codex 通常可以通过配置文件添加自定义 Provider。
 
@@ -203,7 +187,7 @@ Codex 通常可以通过配置文件添加自定义 Provider。
 ```toml
 [model_providers.sub2api]
 name = "SUB2API"
-base_url = "https://你的-sub2api-domain.com/v1"
+base_url = "https://20260513.xyz/v1"
 env_key = "SUB2API_API_KEY"
 
 [profiles.sub2api]
@@ -216,13 +200,13 @@ model = "gpt-5.1-codex"
 Linux / macOS：
 
 ```bash
-export SUB2API_API_KEY="YOUR_SUB2API_KEY"
+export SUB2API_API_KEY="<YOUR_SUB2API_KEY>"
 ```
 
 Windows PowerShell：
 
 ```powershell
-setx SUB2API_API_KEY "YOUR_SUB2API_KEY"
+setx SUB2API_API_KEY "<YOUR_SUB2API_KEY>"
 ```
 
 设置完成后，重新打开终端，再启动 Codex。
@@ -235,23 +219,23 @@ model = "gpt-5.1-codex"
 
 把它改成 SUB2API 后台支持的其他模型即可。
 
-## 八、测试是否接入成功
+## 七、测试是否接入成功
 
 可以用 curl 简单测试 SUB2API 是否可用：
 
 ```bash
-curl https://你的-sub2api-domain.com/v1/models \
-  -H "Authorization: Bearer YOUR_SUB2API_KEY"
+curl https://20260513.xyz/v1/models \
+  -H "Authorization: Bearer <YOUR_SUB2API_KEY>"
 ```
 
-如果返回模型列表，说明 Base URL 和 API Key 基本没问题。
+如果返回模型列表，说明 Base URL 和密钥基本没问题。
 
 也可以测试聊天接口：
 
 ```bash
-curl https://你的-sub2api-domain.com/v1/chat/completions \
+curl https://20260513.xyz/v1/chat/completions \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer YOUR_SUB2API_KEY" \
+  -H "Authorization: Bearer <YOUR_SUB2API_KEY>" \
   -d '{
     "model": "gpt-5.1-codex",
     "messages": [
@@ -265,7 +249,7 @@ curl https://你的-sub2api-domain.com/v1/chat/completions \
 
 如果返回正常 JSON，说明 SUB2API 可以正常转发请求。
 
-## 九、常见错误
+## 八、常见错误
 
 ### 1. 把 CC Switch 当成中转站
 
@@ -286,16 +270,16 @@ CC Switch 只负责切换配置
 
 ### 2. Base URL 没有带 `/v1`
 
-很多 OpenAI-compatible 接口都要求：
+OpenAI-compatible 接口通常需要：
 
 ```text
-https://你的-sub2api-domain.com/v1
+https://20260513.xyz/v1
 ```
 
 如果只写：
 
 ```text
-https://你的-sub2api-domain.com
+https://20260513.xyz
 ```
 
 可能会出现接口路径错误。
@@ -314,46 +298,44 @@ deepseek-chat
 
 那客户端里就应该填写这些名字，而不是随便写一个不存在的模型名。
 
-### 4. API Key 填错位置
+### 4. 密钥填错位置
 
-API Key 通常不是填在 Base URL 里，而是填在：
+密钥通常不是填在 Base URL 里，而是填在：
 
 ```text
-Authorization: Bearer YOUR_SUB2API_KEY
+Authorization: Bearer <YOUR_SUB2API_KEY>
 ```
 
-或者客户端的 API Key 输入框里。
+或者客户端的密钥输入框里。
 
 ### 5. HTTP / HTTPS 写错
 
-如果你的 SUB2API 部署了 HTTPS，就用：
+本文使用的是 HTTPS：
 
 ```text
-https://你的-sub2api-domain.com/v1
+https://20260513.xyz/v1
 ```
 
-如果只是本地或临时测试，可能是：
+不要写成：
 
 ```text
-http://你的-sub2api-domain.com/v1
+http://20260513.xyz/v1
 ```
 
-具体以你的 SUB2API 实际部署为准。
-
-## 十、总结
+## 九、总结
 
 这套配置的核心只有一句话：
 
 > **SUB2API 是中转站，CC Switch 是配置切换工具。**
 
-OpenCode、Claude Code、Codex 都是调用端，它们最终请求的应该是 SUB2API 的 Base URL。
+OpenCode、Claude Code、Codex 都是调用端，它们最终请求的应该是 SUB2API 的 OpenAI URL。
 
 记住这三个配置项：
 
 ```text
-Base URL = SUB2API 中转站地址
-API Key  = SUB2API 提供的 Key
+Base URL = https://20260513.xyz/v1
+Key      = <YOUR_SUB2API_KEY>
 Model    = SUB2API 后台支持的模型名
 ```
 
-配置完成后，就可以通过 CC Switch 在不同工具和模型之间快速切换，同时统一走自己的 SUB2API 中转站。
+配置完成后，就可以通过 CC Switch 在不同工具和模型之间快速切换，同时统一走我的 SUB2API 中转站。
