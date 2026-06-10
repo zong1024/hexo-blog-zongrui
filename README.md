@@ -39,3 +39,4 @@ Import this repository into Vercel, or deploy it from the local checkout.
 
 - run `npm run build`
 - publish the `public` directory
+
